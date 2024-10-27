@@ -4,6 +4,7 @@ extern crate fnv;
 extern crate rand;
 extern crate voronator;
 extern crate wasm_bindgen;
+extern crate web_sys;
 
 #[macro_use]
 extern crate bitflags;

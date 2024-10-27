@@ -9,6 +9,7 @@ use fnv::{FnvHashMap, FnvHashSet};
 use territory::territory::{Territory};
 use territory::geometry::Point;
 use territory::generator::{CellDiagram, generate_random_cells};
+use web_sys::console;
 
 #[wasm_bindgen]
 extern {
@@ -20,7 +21,7 @@ extern {
 }
 
 fn print1(s: &str) {
-    // log(s);
+    console::log_1(&s.into());
 }
 
 fn print2(s: &str) {
@@ -89,14 +90,14 @@ impl World {
 #[wasm_bindgen]
 impl World {
     #[wasm_bindgen(constructor)]
-    pub fn new(grid_scale: i32) -> Option<World> {
-        Some(World {
+    pub fn new(grid_scale: i32) -> World {
+        World {
             grid: FnvHashMap::default(),
             grid_occupied_coords: FnvHashSet::default(),
-            grid_scale: grid_scale,
+            grid_scale,
             territories: FnvHashMap::default(),
             territory_id_counter: 0,
-        })
+        }
     }
 
     // delete world
@@ -140,6 +141,7 @@ impl World {
         let territory = Territory::new(id);
         self.territories.insert(id, territory);
 
+        print1(&format!("Generated new ID: {}", id));
         id
     }
 
