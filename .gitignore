@@ -24,3 +24,5 @@ wasm-pack.log
 # ignore specific test files
 test/nodes/towns_ww2.json
 test/nodes/world_ww2.json
+
+.idea
