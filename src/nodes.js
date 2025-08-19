@@ -590,9 +590,9 @@ const Nodes = {
     renderTerritoryIcons: true,      // render resource icons
     renderTerritoryId: false,        // render territory ids
     renderTerritoryCost: false,      // render cost number
-    renderTerritoryOpaque: false,    // render ~opaque solid town/nation colors
+    renderTerritoryOpaque: true,    // render ~opaque solid town/nation colors
     renderTerritoryNoBorders: false, // don't render territory borders
-    renderTerritoryCapitals: false,  // render capital markers
+    renderTerritoryCapitals: true,  // render capital markers
     renderTerritoryColors: false,    // for debugging, render territory assigned colors
     
     // render town names (enum value, set to constant RENDER_TOWN_NAMETAG_*)
